@@ -10,6 +10,12 @@ pub struct ScanArgs {
 
 }
 
+impl ScanArgs {
+    pub fn get_path(&self) -> &String {
+        &self.path
+    }
+}
+
 impl fmt::Display for ScanArgs {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
         write!(f, "Given Path {}", self.path)
