@@ -5,9 +5,14 @@ use clap::Parser;
 #[command(version, about, long_about = None)]
 pub struct ScanArgs {
 
-    #[arg(short, long)]
-    path: String
+    #[arg(short, long, default_value_t = String::from("."))]
+    path: String,
 
+    #[arg(short, long, default_value_t = String::from("main"))]
+    branch: String,
+
+    #[arg(short, long, default_value_t = String::from("origin"))]
+    remote: String
 }
 
 impl ScanArgs {
